@@ -1,0 +1,6 @@
+@BulkImageProcessor.Api_HostAddress = http://localhost:5013
+
+GET {{BulkImageProcessor.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+:root {
+  --brand-color: #6366f1;
+  color-scheme: dark;
+}
+
+body {
+  accent-color: var(--brand-color);
+}
+
+/* Fallback progresivo para navegadores que no soporten accent-color */
+@supports not (accent-color: var(--brand-color)) {
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #334155;
+    border-radius: 4px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    margin-top: -4px;
+  }
+  progress {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 12px;
+    border-radius: 6px;
+  }
+  progress::-webkit-progress-bar {
+    background-color: #1e293b;
+    border-radius: 6px;
+  }
+  progress::-webkit-progress-value {
+    background-color: var(--brand-color);
+    border-radius: 6px;
+  }
+}
+
+/* Optimización de rendimiento de pintado para cientos de tarjetas en la galería */
+.gallery-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 260px;
+}
